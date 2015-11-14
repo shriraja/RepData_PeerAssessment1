@@ -45,7 +45,12 @@ actaverage[actaverage$mean==max(actaverage$mean),1]
 ```{r}
 nrow(activitydata[is.na(activitydata$steps),])
 ```
-
+<!--
+Steps used for imputation
+1. Iterate thru each row in activitydata
+2. Check if the step value is NA
+3. If it is true, then calculate the average for that interval for all the days and assign that value to it
+-->
 ```{r}
 nactivitydata <- activitydata
 for(i in 1:nrow(nactivitydata)) {
